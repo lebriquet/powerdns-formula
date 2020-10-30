@@ -31,6 +31,8 @@ powerdns_mysql_init_db_script:
     - group: root
     - source: salt://powerdns/files/initdb.sh
     - template: jinja
+    - context:
+        powerdns: {{ powerdns }}
 
 powerdns_mysql_initdb:
   cmd.run:
